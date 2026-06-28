@@ -1,0 +1,73 @@
+npm run dev
+npm run dev
+
+CREATE TABLE usuarios (
+    id_usuario SERIAL PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    apellido VARCHAR(100),
+    usuario VARCHAR(50) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    tipo VARCHAR(20) NOT NULL CHECK (tipo IN ('Administrador','Encargado')),
+    estado BOOLEAN DEFAULT TRUE,
+    fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE categorias (
+    id_categoria SERIAL PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    descripcion TEXT
+);
+
+CREATE TABLE materiales (
+    id_material SERIAL PRIMARY KEY,
+    nombre VARCHAR(150) NOT NULL,
+    descripcion TEXT,
+    cantidad_total INTEGER NOT NULL CHECK (cantidad_total >= 0),
+    cantidad_disponible INTEGER NOT NULL CHECK (cantidad_disponible >= 0),
+    ubicacion VARCHAR(100),
+    id_categoria INTEGER,
+    estado BOOLEAN DEFAULT TRUE,
+
+    CONSTRAINT fk_categoria
+        FOREIGN KEY (id_categoria)
+        REFERENCES categorias(id_categoria)
+        ON UPDATE CASCADE
+        ON DELETE SET NULL
+);
+
+CREATE TABLE prestamos (
+    id_prestamo SERIAL PRIMARY KEY,
+    id_usuario_encargado INTEGER NOT NULL,
+    matricula VARCHAR(20) NOT NULL,
+    nombre_solicitante VARCHAR(150) NOT NULL,
+    fecha_solicitud DATE NOT NULL,
+    fecha_entrega DATE,
+    estado VARCHAR(20) NOT NULL DEFAULT 'Pendiente'
+        CHECK (estado IN ('Pendiente','Entregado')),
+    observaciones TEXT,
+
+    CONSTRAINT fk_usuario
+        FOREIGN KEY (id_usuario_encargado)
+        REFERENCES usuarios(id_usuario)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT
+);
+
+CREATE TABLE detalle_prestamo (
+    id_detalle SERIAL PRIMARY KEY,
+    id_prestamo INTEGER NOT NULL,
+    id_material INTEGER NOT NULL,
+    cantidad INTEGER NOT NULL CHECK (cantidad > 0),
+
+    CONSTRAINT fk_prestamo
+        FOREIGN KEY (id_prestamo)
+        REFERENCES prestamos(id_prestamo)
+        ON UPDATE CASCADE
+        ON DELETE CASCADE,
+
+    CONSTRAINT fk_material
+        FOREIGN KEY (id_material)
+        REFERENCES materiales(id_material)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT
+);
