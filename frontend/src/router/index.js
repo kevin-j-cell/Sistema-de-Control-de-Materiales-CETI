@@ -2,8 +2,10 @@ import { createRouter, createWebHistory } from "vue-router";
 
 import LoginView from "../views/LoginView.vue";
 import HomeView from "../views/HomeView.vue";
-import ProductosView from "../views/ProductosView.vue";
+import MaterialesView from "../views/MaterialesView.vue";
 import UsuariosView from "../views/UsuariosView.vue";
+import CategoriasView from "../views/CategoriasView.vue";
+import PrestamosView from "../views/PrestamosView.vue";
 
 const routes = [
 
@@ -18,17 +20,23 @@ const routes = [
         name: "home",
         component: HomeView
     },
-
-    {
-        path: "/productos",
-        name: "productos",
-        component: ProductosView
-    },
-
+    
     {
         path: "/usuarios",
         name: "usuarios",
         component: UsuariosView
+    },
+    {
+        path: "/categorias",
+        component: CategoriasView
+    },
+    {
+        path: "/prestamos",
+        component: PrestamosView
+    },
+    {
+        path: "/materiales",
+        component: MaterialesView
     }
 
 ];
