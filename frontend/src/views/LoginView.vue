@@ -71,7 +71,16 @@ const login = async () => {
         mensaje.value = datos.mensaje;
 
         console.log(datos.usuario);
+
+        localStorage.setItem(
+            "usuario",
+            JSON.stringify(datos.usuario)
+        );
+
+
+        
         router.push("/home");
+        //localStorage.removeItem("usuario");
 
     }
     catch (error) {

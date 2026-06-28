@@ -20,11 +20,14 @@ const routes = [
         name: "home",
         component: HomeView
     },
-    
+
     {
         path: "/usuarios",
         name: "usuarios",
-        component: UsuariosView
+        component: UsuariosView,
+        meta:{
+            requiereAdmin:true
+        }
     },
     {
         path: "/categorias",
@@ -37,7 +40,9 @@ const routes = [
     {
         path: "/materiales",
         component: MaterialesView
-    }
+    },
+
+
 
 ];
 
@@ -45,6 +50,27 @@ const router = createRouter({
 
     history: createWebHistory(),
     routes
+
+});
+
+router.beforeEach((to, from, next)=>{
+
+    const usuario = JSON.parse(localStorage.getItem("usuario"));
+
+    if(!usuario && to.path != "/"){
+        return next("/");
+    }
+
+    if(
+        to.meta.requiereAdmin &&
+        usuario.tipo !== "Administrador"
+        
+    ){
+
+        return next("/home");
+    }
+
+    next();
 
 });
 
