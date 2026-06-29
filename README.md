@@ -117,7 +117,7 @@ Proyecto/
 ## 1. Clonar el repositorio
 
 ```bash
-git clone <URL_DEL_REPOSITORIO>
+git clone <https://github.com/kevin-j-cell/Sistema-de-Control-de-Materiales-CETI>
 ```
 ## 2.Instalación la base de datos
 
@@ -126,7 +126,7 @@ Crear una base de datos vacía en su Postgres (ej. CREATE DATABASE mi_proyecto;)
 Importar el archivo ejecutando:
 
 ```bash
-	psql -U usuario_profe -d mi_proyecto -f database/estructura_y_datos.sql
+psql -U usuario_profe -d mi_proyecto -f database/estructura_y_datos.sql
 ```
 
 ## 3. Instalar dependencias del Backend
