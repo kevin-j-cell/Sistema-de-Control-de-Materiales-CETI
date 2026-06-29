@@ -7,6 +7,7 @@ import UsuariosView from "../views/UsuariosView.vue";
 import CategoriasView from "../views/CategoriasView.vue";
 import PrestamosView from "../views/PrestamosView.vue";
 
+
 const routes = [
 
     {
@@ -35,6 +36,7 @@ const routes = [
     },
     {
         path: "/prestamos",
+        name: "prestamos",
         component: PrestamosView
     },
     {
