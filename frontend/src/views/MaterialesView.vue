@@ -379,41 +379,102 @@ onMounted(() => {
 
 <style scoped>
 
-table{
-
-    width:100%;
-    border-collapse:collapse;
-
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-th,td{
-
-    padding:8px;
-    text-align:left;
-
+div {
+    max-width: 1100px;
+    margin: 30px auto;
 }
 
-form{
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 25px;
+}
 
-    margin:20px 0;
-    padding:15px;
-    border:1px solid #ccc;
+form {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,.15);
+    margin: 20px 0;
+}
 
+form div {
+    margin-bottom: 15px;
+}
+
+label {
+    font-weight: bold;
+    color: #444;
 }
 
 input,
-textarea,
-select{
-
-    width:100%;
-    margin-bottom:10px;
-
+select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
 }
 
-button{
+input:focus,
+select:focus {
+    border-color: #1976d2;
+    outline: none;
+}
 
-    margin-right:10px;
+button {
+    padding: 10px 16px;
+    margin: 5px;
+    border: none;
+    border-radius: 6px;
+    background: #1976d2;
+    color: white;
+    cursor: pointer;
+    transition: background .2s;
+}
 
+button:hover:not(:disabled) {
+    background: #1565c0;
+}
+
+button:disabled {
+    background: #9e9e9e;
+    cursor: not-allowed;
+}
+
+hr {
+    margin: 30px 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,.15);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th {
+    background: #1976d2;
+    color: white;
+}
+
+th,
+td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+tr:hover {
+    background: #f5f5f5;
 }
 
 </style>

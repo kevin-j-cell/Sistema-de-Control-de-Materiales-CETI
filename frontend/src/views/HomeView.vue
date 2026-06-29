@@ -9,9 +9,6 @@
         Materiales
     </RouterLink>
 
-    <RouterLink to="/categorias">
-        Categorías
-    </RouterLink>
 
     <RouterLink to="/prestamos">
         Préstamos
@@ -51,3 +48,60 @@
 
 
 </script>
+
+<style scoped>
+
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    margin: 40px 0 30px;
+}
+
+.menu {
+    width: 350px;
+    margin: auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,.15);
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+a {
+    text-decoration: none;
+    text-align: center;
+    padding: 12px;
+    background: #1976d2;
+    color: white;
+    border-radius: 6px;
+    transition: background .2s;
+}
+
+a:hover {
+    background: #1565c0;
+}
+
+button {
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    background: #d32f2f;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background .2s;
+}
+
+button:hover {
+    background: #b71c1c;
+}
+
+</style>

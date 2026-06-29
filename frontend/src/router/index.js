@@ -4,7 +4,6 @@ import LoginView from "../views/LoginView.vue";
 import HomeView from "../views/HomeView.vue";
 import MaterialesView from "../views/MaterialesView.vue";
 import UsuariosView from "../views/UsuariosView.vue";
-import CategoriasView from "../views/CategoriasView.vue";
 import PrestamosView from "../views/PrestamosView.vue";
 
 
@@ -29,10 +28,6 @@ const routes = [
         meta:{
             requiereAdmin:true
         }
-    },
-    {
-        path: "/categorias",
-        component: CategoriasView
     },
     {
         path: "/prestamos",

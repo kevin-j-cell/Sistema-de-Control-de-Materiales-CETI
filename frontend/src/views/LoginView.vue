@@ -1,7 +1,7 @@
 <template>
 
 <div class="login">
-
+    <h2>Control de materiales del CETI</h2>
     <h2>Iniciar Sesión</h2>
 
     <input
@@ -94,3 +94,69 @@ const login = async () => {
 
 
 </script>
+
+<style scoped>
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.login {
+    width: 350px;
+    margin: 100px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #1976d2;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    background: #1976d2;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background .2s;
+}
+
+button:hover {
+    background: #1565c0;
+}
+
+p {
+    text-align: center;
+    color: #d32f2f;
+    min-height: 20px;
+}
+
+body {
+    background: #f4f6f9;
+}
+
+</style>
