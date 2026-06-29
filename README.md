@@ -9,6 +9,8 @@ El objetivo principal es facilitar el registro y administración de usuarios, ma
 > **Nota:** Debido al tiempo disponible para el desarrollo del proyecto, algunas funcionalidades quedaron pendientes de implementación. Actualmente el sistema cumple con las operaciones CRUD principales de usuarios, materiales y préstamos. Las funcionalidades relacionadas con el detalle de los préstamos y el cambio de estado a "Entregado" fueron contempladas en el diseño, pero quedaron como trabajo futuro y pueden implementarse sin modificar la arquitectura existente.
 
 ---
+# Video de Video de Demostración y Explicación
+URL
 
 # Funcionalidades implementadas
 
