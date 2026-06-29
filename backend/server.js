@@ -4,12 +4,14 @@ const express = require("express");
 const cors = require("cors");
 const authRoutes = require("./routes/authRoutes");
 const usuariosRoutes=require("./routes/usuarios");
+const materialesRoutes = require("./routes/materiales");
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 app.use("/api/usuarios",usuariosRoutes);
+app.use("/api/materiales", materialesRoutes);
 
 app.use("/api", authRoutes);
 

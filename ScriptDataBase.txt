@@ -12,11 +12,6 @@ CREATE TABLE usuarios (
     fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE TABLE categorias (
-    id_categoria SERIAL PRIMARY KEY,
-    nombre VARCHAR(100) NOT NULL,
-    descripcion TEXT
-);
 
 CREATE TABLE materiales (
     id_material SERIAL PRIMARY KEY,
@@ -25,14 +20,8 @@ CREATE TABLE materiales (
     cantidad_total INTEGER NOT NULL CHECK (cantidad_total >= 0),
     cantidad_disponible INTEGER NOT NULL CHECK (cantidad_disponible >= 0),
     ubicacion VARCHAR(100),
-    id_categoria INTEGER,
-    estado BOOLEAN DEFAULT TRUE,
-
-    CONSTRAINT fk_categoria
-        FOREIGN KEY (id_categoria)
-        REFERENCES categorias(id_categoria)
-        ON UPDATE CASCADE
-        ON DELETE SET NULL
+    categoria VARCHAR(50) NOT NULL,
+    estado BOOLEAN DEFAULT TRUE
 );
 
 CREATE TABLE prestamos (
